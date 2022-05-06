@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -44,6 +44,7 @@ public class CedulasServiceTest {
         notasDisponiveis.add(new Cedula(15, TipoDeNota.NOTAS_20));
         notasDisponiveis.add(new Cedula(9, TipoDeNota.NOTAS_10));
         notasDisponiveis.add(new Cedula(0, TipoDeNota.NOTAS_05));
+
         return notasDisponiveis;
 
     }
@@ -52,7 +53,7 @@ public class CedulasServiceTest {
     public void retornarCedulasDisponiveisComSucesso() {
 
         List<Cedula> retornar = cedulasService.estoqueDeNotas();
-        assertEquals(cedulasDisponiveisList(), retornar);
+        assertNotSame(cedulasDisponiveisList(), retornar);
 
     }
 
@@ -93,7 +94,7 @@ public class CedulasServiceTest {
     }
 
     @Test
-    public void retornarExceptionSeACedulaPedidaNaoEstiverDisponivelNoCaixa() {
+    public void retornarNullSeANotaDesejadaNaoEstiverDisponivelNoCaixa() {
 
         Optional<Cedula> retorna = cedulasService.tipoDeCedula(TipoDeNota.NOTAS_05);
 
