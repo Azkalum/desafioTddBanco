@@ -3,7 +3,6 @@ package gft.com.desafiotddbanco.services;
 import gft.com.desafiotddbanco.dto.CedulasDTO;
 import gft.com.desafiotddbanco.model.Cedula;
 import gft.com.desafiotddbanco.tipo.TipoDeNota;
-import lombok.SneakyThrows;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -13,10 +12,10 @@ import java.util.Optional;
 @Service
 public class SaqueService {
 
-    private CedulasService cedulasT;
+    private CedulasService cedulasService;
 
     public SaqueService(CedulasService cedulasT){
-        this.cedulasT = cedulasT;
+        this.cedulasService = cedulasT;
 
     }
 
@@ -35,7 +34,7 @@ public class SaqueService {
 
         int resto = valor;
 
-        for(Cedula cedula : cedulasT.estoqueDeNotas()){
+        for(Cedula cedula : cedulasService.estoqueDeNotas()){
             Optional<CedulasDTO> cedulasDTO = quantidadeDeCadaTipoDeNota(cedula.getNota(), resto);
 
             if(cedulasDTO.isPresent()){
@@ -57,25 +56,24 @@ public class SaqueService {
     }
 
 
-    private void atualizarAposBuscaDeCedulas(List<CedulasDTO> cedulasDTOList){
+    private void atualizarAposBuscaDeCedulas(List<CedulasDTO> cedulasDTOList) {
         cedulasDTOList.
                 stream().
-                forEach(this::accept);
+                forEach(cedulasDTO -> {
+                    try {
+                        cedulasService.retiradaDeCedulas(cedulasDTO.getTipoDeNota(), cedulasDTO.getQuantidade());
+                    } catch (Exception e) {
 
+                    }
 
-}
-    @SneakyThrows
-    private void accept(CedulasDTO cedulasDTO) {
-        cedulasT.
-                retiradaDeCedulas(cedulasDTO.getTipoDeNota(),
-                        cedulasDTO.getQuantidade());
+                });
     }
 
     private Optional<CedulasDTO> quantidadeDeCadaTipoDeNota(TipoDeNota tipoDeNota, int resto){
 
         if(resto >= tipoDeNota.getValor()){
             int quantidade = resto / tipoDeNota.getValor();
-            Optional<Cedula> cedula = cedulasT.tipoDeCedula(tipoDeNota);
+            Optional<Cedula> cedula = cedulasService.tipoDeCedula(tipoDeNota);
 
             if(cedula.isPresent()){
                 if (quantidade > cedula.get().getQuantidadeDeNotasDisponiveis()){
