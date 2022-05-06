@@ -1,7 +1,5 @@
 package gft.com.desafiotddbanco.controller;
 
-import gft.com.desafiotddbanco.exceptions.NumeroDeNotasIndisponivelException;
-import gft.com.desafiotddbanco.exceptions.ValorIndisponivelException;
 import gft.com.desafiotddbanco.services.SaqueService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

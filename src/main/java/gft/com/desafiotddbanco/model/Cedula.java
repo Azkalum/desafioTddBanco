@@ -1,6 +1,5 @@
 package gft.com.desafiotddbanco.model;
 
-import gft.com.desafiotddbanco.exceptions.NumeroDeNotasIndisponivelException;
 import gft.com.desafiotddbanco.tipo.TipoDeNota;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
