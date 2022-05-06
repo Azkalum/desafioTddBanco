@@ -49,7 +49,9 @@ Para rodar os testes, abra a aba **Test** no projeto!
 
 ```
   Src > Test > gft.com > CedulasServiceTest
+  ###Testar o CedulasService
   Src > Test > gft.com > SaqueServiceTest
+  ###Testar o SaqueService
 ```
 
 
@@ -59,13 +61,7 @@ Para rodar os testes, abra a aba **Test** no projeto!
 **Back-end:** Spring Boot, TDD, Mockito, JUnit
 
 
-## Suporte
-
-Para suporte, mande um email para RNAN@gft.com
-
-
 ## Autor
 - Renan Almeida :
-- [GitLab](https://git.gft.com/rnan)
 - [Linkedin](https:///www.linkedin.com/in/renan-almeida-025b74220/)
 
