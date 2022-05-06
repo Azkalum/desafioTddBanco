@@ -8,7 +8,8 @@ public enum TipoDeNota {
     NOTAS_10(10),
     NOTAS_20(20),
     NOTAS_50(50),
-    NOTAS_100(100);
+    NOTAS_100(100),
+    NOTAS_05(0);
 
     private Integer valor;
 

@@ -1,8 +1,6 @@
 package gft.com.desadiotddbanco.services;
 
 import gft.com.desafiotddbanco.dto.CedulasDTO;
-import gft.com.desafiotddbanco.exceptions.SaqueIndisponivelException;
-import gft.com.desafiotddbanco.exceptions.ValorIndisponivelException;
 import gft.com.desafiotddbanco.model.Cedula;
 import gft.com.desafiotddbanco.services.CedulasService;
 import gft.com.desafiotddbanco.services.SaqueService;
@@ -57,9 +55,7 @@ public class SaqueServiceTest {
     }
 
     @Test
-    public void retornarTresNotasDeCemEDuasNotasDe20SemErro() {
-
-        //340
+    public void retornarUmSaqueDe340ComSucesso() {
 
         List<CedulasDTO> cedulasDTO = new ArrayList<>();
         cedulasDTO.add(retornoDeNotas(3, TipoDeNota.NOTAS_100));
@@ -79,9 +75,7 @@ public class SaqueServiceTest {
     }
 
     @Test
-    public void retornarUmaCedulaDeCemUmaDeCinquentaEDuasDeVinteSemErro() {
-
-        //190
+    public void retornarUmSaqueDe190ComSucesso() {
 
         List<CedulasDTO> cedulasDTO = new ArrayList<>();
         cedulasDTO.add(retornoDeNotas(1, TipoDeNota.NOTAS_100));
@@ -103,9 +97,7 @@ public class SaqueServiceTest {
     }
 
     @Test
-    public void retornarUmaCedulaDeVinteEUmaDeDezSemErro() {
-
-        //30
+    public void retornarUmSaqueDe30ComSucesso() {
 
         List<CedulasDTO> cedulasDTO = new ArrayList<>();
         cedulasDTO.add(retornoDeNotas(1, TipoDeNota.NOTAS_20));
@@ -125,9 +117,7 @@ public class SaqueServiceTest {
     }
 
     @Test
-    public void retornarUmaCedulaDeCemUmaCedulaDeCinquentaUmaCedulaDe20EUmaCedulaDeDezSemErro() {
-
-        //180
+    public void retornarUmSaqueDe180ComSucesso() {
 
         List<CedulasDTO> cedulasDTO = new ArrayList<>();
         cedulasDTO.add(retornoDeNotas(1, TipoDeNota.NOTAS_100));
@@ -150,9 +140,7 @@ public class SaqueServiceTest {
     }
 
     @Test
-    public void retornarUmaCedulaDeCemEUmaCedulaDeDez() {
-
-        //110
+    public void retornarUmSaqueDe110ComSucesso() {
 
         List<CedulasDTO> cedulasDTO = new ArrayList<>();
         cedulasDTO.add(retornoDeNotas(1, TipoDeNota.NOTAS_100));
@@ -170,6 +158,5 @@ public class SaqueServiceTest {
         }
     }
 
-
-    }
+}
 

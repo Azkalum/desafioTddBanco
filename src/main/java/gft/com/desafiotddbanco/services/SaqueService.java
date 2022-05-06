@@ -3,6 +3,7 @@ package gft.com.desafiotddbanco.services;
 import gft.com.desafiotddbanco.dto.CedulasDTO;
 import gft.com.desafiotddbanco.model.Cedula;
 import gft.com.desafiotddbanco.tipo.TipoDeNota;
+import lombok.SneakyThrows;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -63,6 +64,7 @@ public class SaqueService {
 
 
 }
+    @SneakyThrows
     private void accept(CedulasDTO cedulasDTO) {
         cedulasT.
                 retiradaDeCedulas(cedulasDTO.getTipoDeNota(),

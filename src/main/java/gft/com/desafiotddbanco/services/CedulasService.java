@@ -1,5 +1,6 @@
 package gft.com.desafiotddbanco.services;
 
+import gft.com.desafiotddbanco.exceptions.CedulasIndisponiveisException;
 import gft.com.desafiotddbanco.model.Cedula;
 import gft.com.desafiotddbanco.repository.CedulasRepository;
 import gft.com.desafiotddbanco.tipo.TipoDeNota;
@@ -50,7 +51,7 @@ public class CedulasService {
 
     }
 
-    public void retiradaDeCedulas(TipoDeNota tipoDeNota, int quantidade){
+    public void retiradaDeCedulas(TipoDeNota tipoDeNota, int quantidade) throws CedulasIndisponiveisException {
 
         Optional<Cedula> cedulaOptional = tipoDeCedula(tipoDeNota);
 
@@ -59,7 +60,7 @@ public class CedulasService {
                     estoqueDeCedulas(quantidade);
 
         }else{
-
+            throw new CedulasIndisponiveisException("Valor informado no Saque é indisponível");
         }
 
 
