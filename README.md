@@ -31,8 +31,8 @@ são os seguintes:
 
 
 ## Screenshots
-![](../../Desktop/valorInserido.png)
-![](../../Desktop/retornoValor.png)
+![valorInserido](https://user-images.githubusercontent.com/98130954/167207221-e3204dd8-f8fa-401d-8b4c-a7f8d387d3a6.png)
+![retornoValor](https://user-images.githubusercontent.com/98130954/167207229-03e0dee6-92c8-44a7-923a-0abf2a7d555c.png)
 
 ## Funcionalidades
 
@@ -40,8 +40,8 @@ são os seguintes:
 - Inserir apenas números inteiros
 
 ## Screenshots dos Tests
-![](../../Desktop/cedulasServiceTest.png)
-![](../../Desktop/saqueServiceTest.png)
+![cedulasServiceTest](https://user-images.githubusercontent.com/98130954/167207256-ac5e79eb-d4cd-4aa9-858c-fbdfb19fc933.png)
+![saqueServiceTest](https://user-images.githubusercontent.com/98130954/167207261-0855312a-d2a0-458c-a35f-6ce766ae0347.png)
 
 ## Rodando os testes
 
